@@ -7,7 +7,7 @@ class MeetupController {
     try {
       const meetupModel = new Meetup({
         ...req.body,
-        _id: new mongoose.Types.ObjectId(),
+        _id: mongoose.Types.ObjectId(),
         happeningOn,
       });
       const createdMeetup = await meetupModel.save();
