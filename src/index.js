@@ -5,6 +5,7 @@ import debug from 'debug';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import routes from './modules';
 
 dotenv.config();
@@ -23,6 +24,7 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true })
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(cors());
 
 
 routes(app);
